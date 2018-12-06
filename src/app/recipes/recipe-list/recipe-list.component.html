@@ -8,8 +8,10 @@
     <div class="col-xs-12">
         <app-recipe-item 
             *ngFor="let recipeEl of recipes"
-            [recipe]="recipeEl"></app-recipe-item>
+            [recipe]="recipeEl"
+            (recipeSelected)="onRecipeSelected(recipeEl)"></app-recipe-item>
     </div>
 </div>
 
-<!-- For img src we're using property binding, but we can use string interpolation too: src="{{ recipe.imagePath}}" -->
+<!-- For img src we're using property binding, but we can use 
+    string interpolation too: src="{{ recipe.imagePath}}" -->
