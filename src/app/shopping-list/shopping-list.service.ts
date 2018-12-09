@@ -18,4 +18,15 @@ export class ShoppingListService {
         this.ingredients.push(ingredient);
         this.ingredientsChanged.emit(this.ingredients.slice());
     }
+
+    addIngredients(ingredients: Ingredient[]) {
+        // Spread operator allow us to turn an array of elements into a list of elements, because the push
+        // method is able to handle multiple objects: this.ingredients.push(1, 2), however it is not able 
+        // to handle an array: this.ingredients.push(1, 2), or to be precise it can handle an array but 
+        // then it would push this array as a single object to the other array. So by adding the spread 
+        // operator we can now simply spread our ingredients into a list of single ingredients which are
+        // now pushed without issues to our ingredients array.  
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+    }
 }
