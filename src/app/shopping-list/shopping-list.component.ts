@@ -33,6 +33,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   //   this.ingredients.push(ingredient);
   // }
 
+  onEditItem(index: number) {
+    this.slService.startedEditing.next(index);
+  }
+
   ngOnDestroy() {
     // This is used to prevent any memory leaks because since we are using our own Subject here
     // we need to make sure that we correctly unsubscribe whenever we don't need it anymore. 

@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 export class ShoppingListService {
     // ingredientsChanged = new EventEmitter<Ingredient[]>();
     ingredientsChanged = new Subject<Ingredient[]>();
+    startedEditing = new Subject<number>();
     ingredients: Ingredient[] = [
         new Ingredient('Apples', 5),
         new Ingredient('Tomatoes', 10)
@@ -13,6 +14,10 @@ export class ShoppingListService {
         // We'll return the ingredients, but only a copy of it with slice method. So that I can't access
         // the original array stored in the service.
         return this.ingredients.slice();  
+    }
+
+    getIngredient(index: number) {
+        return this.ingredients[index];
     }
 
     addIngredient(ingredient: Ingredient) {
