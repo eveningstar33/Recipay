@@ -30,6 +30,22 @@ export class RecipeEditComponent implements OnInit {
     console.log(this.recipeForm);
   }
 
+  getControls() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+  }
+
+  onAddIngredient() {
+    // We know that this will be a FormArray but Angular or TypeScript to be precise doesn't know this,
+    // so I'll explicitly cast it. 
+    (<FormArray>this.recipeForm.get('ingredients')).push(
+      new FormGroup({
+        name: new FormControl(),
+        amount: new FormControl()
+      })
+    );
+
+  }
+
   private initForm() {
     let recipeName = '';
     let recipeImagePath = '';
@@ -62,8 +78,6 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
-  getControls() {
-    return (<FormArray>this.recipeForm.get('ingredients')).controls;
-  }
+
 
 }
