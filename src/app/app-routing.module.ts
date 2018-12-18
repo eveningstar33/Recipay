@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { HomeComponent } from './core/home/home.component';
 
@@ -17,7 +17,12 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
+  imports: [
+    // RouterModule.forRoot(appRoutes)
+    // The following strategy will preload all the lazy loading modules after the app has been loaded,
+    // so not at the point of time you load the app initially, but once it runs.
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules})   
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
