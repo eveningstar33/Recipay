@@ -14,17 +14,19 @@ import { RecipesModule } from './recipes/recipes.module';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AuthModule } from './auth/auth.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
     // DropdownDirective    // We delete DropdownDirective because we import the SharedModule
   ],
   imports: [
     BrowserModule,   // It contains all the features of the CommonModule and some additional features
     HttpModule,
-    RecipesModule,
+    // RecipesModule,   // We delete it because we're using lazy loading
     AppRoutingModule,
     SharedModule,
     ShoppingListModule,
