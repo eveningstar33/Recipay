@@ -32,8 +32,8 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BrowserModule,   // It contains all the features of the CommonModule and some additional features
     FormsModule, 
     HttpModule,
-    AppRoutingModule,
-    RecipesModule
+    RecipesModule,
+    AppRoutingModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]

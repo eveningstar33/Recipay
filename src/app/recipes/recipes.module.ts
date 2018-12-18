@@ -7,6 +7,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RecipesRoutingModule } from './recipes-routing.module';
 
 @NgModule({
    declarations: [      // Here are the components
@@ -19,7 +20,8 @@ import { CommonModule } from '@angular/common';
    ],
    imports: [    // Which other moddules do you want to use in this module?
         CommonModule,   // It is used in every feature module, it gives acces to ngFor, ngIf
-        ReactiveFormsModule
+        ReactiveFormsModule, 
+        RecipesRoutingModule
    ] 
 })
 export class RecipesModule {
