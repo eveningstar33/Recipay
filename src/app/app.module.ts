@@ -17,24 +17,23 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesModule } from './recipes/recipes.module';
 import { SharedModule } from './shared/shared.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     SignupComponent,
     SigninComponent,
     // DropdownDirective    // We delete DropdownDirective because we import the SharedModule
   ],
   imports: [
     BrowserModule,   // It contains all the features of the CommonModule and some additional features
-    FormsModule, 
     HttpModule,
     RecipesModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ShoppingListModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
